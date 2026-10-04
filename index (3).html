@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06070a">
+<meta name="description" content="Apresentação comercial Tecnopano × Elevra AI: o motor de crescimento nos Estados Unidos.">
+<title>Tecnopano Rumo aos EUA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Concept: dark industrial deck. Vertical snap-scroll scenes, 3D US map plane, metal panels, one brand-red energy colour, Elevra gold only on Elevra elements and money. */
+:root{
+  --ink:#06070a; --graphite:#101216; --steel:#1b1e24; --metal:#2d323a; --line:rgba(255,255,255,.11);
+  --white:#f4f5f7; --mute:#9aa1ac; --soft:#c9ced6;
+  --hot:#e2231a; --hot-rgb:226,35,26; --hot-soft:#ff5a4d;   /* TECNOPANO brand colour: change here only */
+  --gold:#d4a84b; --gold-rgb:212,168,75;                     /* ELEVRA gold */
+  --cyan:#5fd8ff;
+  --f-display:'Big Shoulders Display','Barlow Condensed','Arial Narrow',Impact,sans-serif;
+  --f-body:'Barlow','Helvetica Neue',Arial,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+  scroll-snap-type:y proximity; scroll-behavior:smooth;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--white);font:400 clamp(1rem,1.4vw,1.15rem)/1.45 var(--f-body);-webkit-text-size-adjust:100%;overflow-x:hidden}
+h1,h2,h3,p{margin:0}
+.slide{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding-block:clamp(64px,8vw,104px);padding-inline:max(16px,4vw);overflow:hidden;isolation:isolate;scroll-snap-align:start;background:radial-gradient(120% 80% at 50% 0%,#15181e 0%,var(--ink) 62%)}
+.slide::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(80% 70% at 50% 45%,#000,transparent);mask-image:radial-gradient(80% 70% at 50% 45%,#000,transparent)}
+.slide::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60% 40% at 50% 112%,rgba(var(--hot-rgb),.2),transparent 70%)}
+.wrap{width:100%;max-width:1240px;display:grid;gap:clamp(22px,3.2vw,44px);min-width:0;position:relative}
+.cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);align-items:center}
+.cols.even{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.cols,.cols.even{grid-template-columns:minmax(0,1fr)}}
+.kicker{font:500 .72rem/1 var(--f-mono);letter-spacing:.24em;text-transform:uppercase;color:var(--hot-soft);display:flex;align-items:center;gap:.9em}
+.kicker::before{content:"";width:34px;height:2px;background:var(--hot)}
+.h{font-family:var(--f-display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.005em;font-size:clamp(2.4rem,7vw,6.2rem);text-wrap:balance}
+.h.m{font-size:clamp(2.1rem,5.4vw,4.6rem)}
+.h em{font-style:normal;color:var(--hot)}
+.h .g{color:var(--gold)}
+.lead{color:var(--soft);font-size:clamp(1.05rem,1.8vw,1.4rem);max-width:36ch}
+.lead b{color:var(--white);font-weight:600}
+.mono{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--mute)}
+.num{font-family:var(--f-display);font-weight:900;line-height:.8;font-variant-numeric:tabular-nums}
+.chrome{background:linear-gradient(180deg,#fff 0%,#cfd4dc 42%,#69707b 52%,#e8ecf1 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glowtxt{color:var(--hot);text-shadow:0 0 50px rgba(var(--hot-rgb),.55)}
+.panel{background:linear-gradient(160deg,#20242b,#0d0f12);border:1px solid var(--line);border-radius:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 30px 60px -24px #000;position:relative;min-width:0}
+.chip{font:500 .7rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;padding:.8em 1em;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--soft);border-radius:2px}
+.chip.hot{border-color:rgba(var(--hot-rgb),.6);color:#fff;background:rgba(var(--hot-rgb),.14);box-shadow:0 0 22px -6px rgba(var(--hot-rgb),.7)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:block;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1}
+.rule{height:1px;background:linear-gradient(90deg,var(--hot),transparent)}
+.say{display:grid;gap:2px;font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(1.4rem,2.8vw,2.3rem);line-height:1.02}
+.say span:last-child{color:var(--hot-soft)}
+
+/* reveal: visible at rest, animates only when the slide is live */
+@keyframes rise{from{opacity:0;transform:translateY(20px)}}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}}
+.live .rv{animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*.12s)}
+.live .pp{animation:pop .5s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*.7s + .2s)}
+
+/* chrome */
+#bar{position:fixed;top:0;left:0;right:0;height:3px;z-index:50;background:rgba(255,255,255,.06);padding-top:env(safe-area-inset-top,0px)}
+#bar i{display:block;height:3px;width:0;background:var(--hot);box-shadow:0 0 12px var(--hot)}
+#nav{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:6px;background:rgba(10,11,14,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:4px;padding:4px}
+#nav button{all:unset;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;color:var(--white);border-radius:2px}
+#nav button:hover{background:rgba(var(--hot-rgb),.25)}
+#nav button:focus-visible{outline:2px solid var(--hot-soft)}
+#nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+#cnt{font:500 .72rem var(--f-mono);letter-spacing:.14em;color:var(--soft);min-width:5.4ch;text-align:center;font-variant-numeric:tabular-nums}
+.brandtag{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;font:500 .62rem var(--f-mono);letter-spacing:.2em;color:var(--mute);text-transform:uppercase}
+@media (max-width:520px){.brandtag{display:none}}
+
+/* 3D map */
+.map3d{position:relative;width:100%;aspect-ratio:1000/560;perspective:1400px;min-width:0}
+.map3d svg{position:absolute;left:0;top:50%;width:100%;height:auto;overflow:visible;transform:translateY(-50%) rotateX(50deg);transform-origin:50% 55%}
+.ring{transform-box:fill-box;transform-origin:center}
+@keyframes ringgo{0%{transform:scale(.2);opacity:.9}100%{transform:scale(1);opacity:0}}
+.ringA{animation:ringgo 5s linear infinite}
+@keyframes twinkle{50%{opacity:.25}}
+.twk{animation:twinkle 2.6s ease-in-out infinite}
+@keyframes dash{to{stroke-dashoffset:-60}}
+.flowline{stroke-dasharray:10 8;animation:dash 1.6s linear infinite}
+
+/* slide 1 */
+.s1{align-items:flex-start}
+.s1 .wrap{min-height:calc(100svh - 150px);align-content:start}
+.s1 .map3d{position:absolute;left:50%;bottom:-3%;width:min(150%,1500px);transform:translateX(-50%);opacity:.95;pointer-events:none}
+.s1 .tt{font-size:clamp(3.2rem,13.5vw,12rem);line-height:.84}
+.s1 .sub{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2.4rem);letter-spacing:.04em;color:var(--soft)}
+.s1 .wrap>*{position:relative;z-index:2}
+.s1::after{background:linear-gradient(180deg,rgba(6,7,10,.0) 40%,rgba(6,7,10,.0)),radial-gradient(60% 40% at 50% 112%,rgba(var(--hot-rgb),.2),transparent 70%)}
+
+/* slide 2 */
+.slabs{display:grid;gap:6px;justify-items:center}
+.slab{width:var(--w);padding:.95em 1em;text-align:center;font:600 .78rem var(--f-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);background:linear-gradient(180deg,#3b414b,#1a1d22 60%,#0e1013);border:1px solid rgba(255,255,255,.12);border-top-color:rgba(255,255,255,.3);box-shadow:0 14px 24px -12px #000}
+.slab.top{background:linear-gradient(180deg,rgba(var(--hot-rgb),.85),#6b0f0b);color:#fff;border-color:rgba(255,255,255,.3)}
+.tower{font-size:clamp(6rem,24vw,17rem);text-align:center;line-height:.78;filter:drop-shadow(0 18px 30px rgba(0,0,0,.8))}
+.badge{display:inline-flex;align-items:baseline;gap:.5em;padding:.7em 1em;border:1px solid rgba(var(--hot-rgb),.6);background:rgba(var(--hot-rgb),.12)}
+.badge b{font:900 clamp(1.6rem,3vw,2.4rem)/1 var(--f-display)}
+.badge span{font:500 .7rem var(--f-mono);letter-spacing:.18em}
+
+/* slide 4 */
+.pipe{position:relative;width:100%;aspect-ratio:1000/230;min-width:0}
+.pipe svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+@keyframes drip{0%{transform:translateY(0);opacity:1}100%{transform:translateY(70px);opacity:0}}
+.drip{animation:drip 1.7s ease-in infinite}
+.leaks{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.leaks div{border-top:2px solid var(--hot);padding-top:10px;font:500 .72rem/1.25 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+@media (max-width:760px){.leaks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* slide 5 / 17 compare */
+.chain{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.chain li{position:relative;padding:.85em 1em .85em 2.6em;font:500 .8rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
+.chain li::before{content:"";position:absolute;left:1.05em;top:0;bottom:0;width:2px;background:currentColor;opacity:.4}
+.chain li:first-child::before{top:50%}.chain li:last-child::before{bottom:50%}
+.chain li::after{content:"";position:absolute;left:.78em;top:50%;width:9px;height:9px;margin-top:-4px;border-radius:50%;background:currentColor}
+.old{color:#6e747d;filter:grayscale(1)}
+.old li:last-child{opacity:.55;border-top:1px dashed #444}
+.neo{color:#fff}
+.neo li::before{background:linear-gradient(180deg,var(--hot),var(--gold));opacity:1;box-shadow:0 0 12px rgba(var(--hot-rgb),.8)}
+.neo li::after{background:var(--hot);box-shadow:0 0 10px var(--hot)}
+.pnl{padding:clamp(18px,2.4vw,30px);display:grid;gap:12px;align-content:start}
+.pnl h3{font:500 .72rem var(--f-mono);letter-spacing:.24em;text-transform:uppercase}
+.pnl.neoP{border-color:rgba(var(--hot-rgb),.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 70px -20px rgba(var(--hot-rgb),.65),0 30px 60px -24px #000}
+
+/* slide 6 */
+.s6{background:#020203}
+.dial{width:min(100%,520px);margin-inline:auto;aspect-ratio:1;position:relative;filter:drop-shadow(0 30px 40px rgba(0,0,0,.8))}
+.dial svg{width:100%;height:100%;overflow:visible}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.hand{transform-origin:200px 200px;animation:sweep 8s linear infinite}
+.lead-lbl{position:absolute;inset:0;display:grid;place-items:center;font:900 clamp(2.4rem,9vw,5rem)/1 var(--f-display);letter-spacing:.08em}
+.flow4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.flow4 div{padding:.9em .6em;text-align:center;font:500 .68rem/1.3 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);position:relative}
+.flow4 div:not(:last-child)::after{content:"";position:absolute;right:-11px;top:50%;width:12px;height:2px;background:var(--hot);box-shadow:0 0 8px var(--hot)}
+.flow4 div.on{border-color:rgba(var(--hot-rgb),.7);background:rgba(var(--hot-rgb),.14)}
+@media (max-width:600px){.flow4{grid-template-columns:repeat(2,minmax(0,1fr))}.flow4 div:nth-child(2)::after{display:none}}
+.big247{display:flex;align-items:baseline;gap:.4em;flex-wrap:wrap}
+.big247 .num{font-size:clamp(3.6rem,9vw,7rem)}
+
+/* slide 7 chat */
+.phone{max-width:460px;width:100%;margin-inline:auto;padding:14px;display:grid;gap:10px;border-radius:14px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.16);box-shadow:0 40px 80px -20px #000,0 0 80px -30px rgba(var(--hot-rgb),.7)}
+.phone .top{display:flex;align-items:center;gap:8px;font:500 .66rem var(--f-mono);letter-spacing:.2em;color:var(--mute);padding:2px 4px 8px;border-bottom:1px solid var(--line)}
+.dot{width:8px;height:8px;border-radius:50%;background:#35e08a;box-shadow:0 0 10px #35e08a}
+.msg{max-width:86%;padding:.65em .9em;font-size:.95rem;line-height:1.3;border-radius:12px}
+.msg.ai{background:#20252d;border:1px solid var(--line);border-bottom-left-radius:3px}
+.msg.me{justify-self:end;background:var(--hot);color:#fff;border-bottom-right-radius:3px}
+.msg small{display:block;font:500 .6rem var(--f-mono);letter-spacing:.18em;opacity:.65;margin-bottom:3px}
+.qual{padding:14px;border:1px solid rgba(var(--hot-rgb),.7);background:rgba(var(--hot-rgb),.12);display:grid;gap:8px;box-shadow:0 0 40px -10px rgba(var(--hot-rgb),.8)}
+.qual b{font:900 1.5rem/1 var(--f-display);letter-spacing:.06em;text-transform:uppercase}
+.qual .route{font:500 .68rem var(--f-mono);letter-spacing:.18em;color:var(--cyan)}
+
+/* slide 8 */
+#dots{width:100%;aspect-ratio:16/10;display:block;min-width:0}
+.s8 .num{font-size:clamp(5rem,17vw,13rem)}
+
+/* slide 9 */
+.loop{position:relative;width:100%;aspect-ratio:1000/300;min-width:0}
+.loop svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.cyc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.cyc div{font:500 .72rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;padding:.9em;border:1px solid var(--line);text-align:center;color:var(--soft)}
+@media (max-width:600px){.cyc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* slide 10 engine */
+.engine{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:clamp(14px,3vw,40px);align-items:stretch}
+.inputs{display:grid;gap:8px;align-content:center}
+.inputs .chip{text-align:center;position:relative;background-image:linear-gradient(90deg,transparent,rgba(var(--hot-rgb),.5),transparent);background-size:200% 100%;animation:slide 3s linear infinite}
+@keyframes slide{from{background-position:200% 0}to{background-position:-200% 0}}
+.core{padding:clamp(14px,2vw,26px);display:grid;gap:0;border-color:rgba(var(--gold-rgb),.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 90px -24px rgba(var(--hot-rgb),.8),0 30px 60px -24px #000}
+.core .st{position:relative;padding:.62em 0 .62em 2.2em;font:600 .78rem var(--f-mono);letter-spacing:.2em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--line)}
+.core .st:last-child{border-bottom:0}
+.core .st::before{content:"";position:absolute;left:.55em;top:50%;width:10px;height:10px;margin-top:-5px;background:var(--gold);box-shadow:0 0 14px var(--gold);transform:rotate(45deg)}
+.core .st:first-child{color:var(--cyan)}
+.core .rail{position:absolute;left:calc(clamp(14px,2vw,26px) + .55em + 4px);top:20px;bottom:20px;width:2px;background:linear-gradient(180deg,var(--hot),var(--gold),var(--hot));background-size:100% 200%;animation:railgo 2.4s linear infinite;opacity:.55}
+@keyframes railgo{to{background-position:0 -200%}}
+.outp{display:grid;align-content:center;justify-items:start;gap:8px;padding-left:clamp(0px,1vw,14px)}
+.outp .num{font-size:clamp(2.6rem,6vw,5.4rem)}
+@media (max-width:860px){.engine{grid-template-columns:minmax(0,1fr)}.inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.outp{padding:0}}
+
+/* slide 11 split */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));position:relative;border:1px solid var(--line)}
+.half{padding:clamp(20px,3vw,40px);display:grid;gap:14px;align-content:start}
+.half:first-child{background:linear-gradient(135deg,rgba(var(--hot-rgb),.2),transparent 70%)}
+.half:last-child{background:linear-gradient(225deg,rgba(var(--gold-rgb),.18),transparent 70%);text-align:right;justify-items:end}
+.half .h{font-size:clamp(2rem,5vw,4rem)}
+.half .chips{gap:6px}.half:last-child .chips{justify-content:flex-end}
+.mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:#0b0c0f;border:1px solid var(--gold);padding:.9em 1.1em;font:900 clamp(1rem,2.2vw,1.6rem)/1 var(--f-display);letter-spacing:.1em;color:var(--gold);box-shadow:0 0 50px rgba(var(--gold-rgb),.35);white-space:nowrap}
+@media (max-width:700px){.split{grid-template-columns:minmax(0,1fr)}.half:last-child{text-align:left;justify-items:start}.half:last-child .chips{justify-content:flex-start}.mid{top:50%}}
+
+/* slide 14 */
+.eq{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.6vw,34px);align-items:stretch}
+.mult{padding:clamp(16px,2vw,28px);display:grid;align-content:center;min-height:clamp(110px,16vw,190px);font:800 clamp(1.3rem,2.6vw,2.2rem)/1 var(--f-display);text-transform:uppercase;border-color:rgba(var(--hot-rgb),.5)}
+.mult::after{content:"×";position:absolute;right:calc(-1 * clamp(14px,2vw,26px));top:50%;transform:translateY(-50%);z-index:2;font:900 clamp(1.4rem,3vw,2.6rem) var(--f-display);color:var(--hot);text-shadow:0 0 16px var(--hot)}
+.mult:last-child::after{display:none}
+.mult small{display:block;font:500 .62rem var(--f-mono);letter-spacing:.2em;color:var(--hot-soft);margin-bottom:.8em}
+.gr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.gr .eqs{font:900 clamp(2rem,5vw,4rem) var(--f-display);color:var(--hot)}
+@media (max-width:760px){.eq{grid-template-columns:minmax(0,1fr)}.mult::after{right:50%;top:auto;bottom:calc(-1 * clamp(14px,3vw,26px));transform:translateX(50%)}}
+
+/* slide 15 */
+.blocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.blk{padding:clamp(18px,2.2vw,28px);display:grid;gap:12px;align-content:start}
+.blk .d{font:500 .7rem var(--f-mono);letter-spacing:.22em;color:var(--hot-soft)}
+.blk h3{font:800 clamp(1.7rem,3vw,2.6rem)/1 var(--f-display);text-transform:uppercase}
+.blk ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font:500 .74rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.blk li{padding-left:1.2em;position:relative}
+.blk li::before{content:"";position:absolute;left:0;top:.45em;width:6px;height:6px;background:var(--hot)}
+.gear{width:72px;height:72px;stroke:var(--hot);fill:none;stroke-width:1.6}
+.gear.a{animation:sweep 14s linear infinite;opacity:.45}.gear.b{animation:sweep 5s linear infinite;opacity:.8}.gear.c{animation:sweep 1.5s linear infinite;filter:drop-shadow(0 0 8px var(--hot))}
+.prog{height:4px;background:rgba(255,255,255,.08)}.prog i{display:block;height:100%;background:var(--hot);box-shadow:0 0 10px var(--hot)}
+@media (max-width:860px){.blocks{grid-template-columns:minmax(0,1fr)}}
+
+/* slide 16 dashboard */
+.dash{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:clamp(12px,1.6vw,22px)}
+.kpi{padding:12px;display:grid;gap:8px;background:rgba(0,0,0,.35);border:1px solid var(--line)}
+.kpi .l{font:500 .62rem var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);min-height:2.4em}
+.kpi svg{width:100%;height:42px;overflow:visible}
+.kpi .st{font:500 .58rem var(--f-mono);letter-spacing:.2em;color:#35e08a}
+@media (max-width:860px){.dash{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* slide 17 */
+.vs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:14px;align-items:stretch}
+.vs .chips{gap:6px}
+@media (max-width:760px){.vs{grid-template-columns:minmax(0,1fr)}}
+.verdict{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6em 1em;font:800 clamp(1.3rem,3vw,2.4rem)/1.05 var(--f-display);text-transform:uppercase}
+.verdict s{color:#6e747d;text-decoration-color:var(--hot);text-decoration-thickness:3px}
+.verdict .vsw{font:500 .8rem var(--f-mono);letter-spacing:.2em;color:var(--mute)}
+
+/* slide clientes Elevra */
+.cli{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
+.cli .panel{padding:clamp(18px,2.4vw,30px);display:grid;gap:14px;align-content:space-between;min-height:clamp(120px,14vw,170px);border-top-color:rgba(var(--gold-rgb),.5)}
+.cli b{font:800 clamp(1.5rem,2.6vw,2.2rem)/1 var(--f-display);text-transform:uppercase;letter-spacing:.03em;text-wrap:balance}
+.cli .mono{display:flex;align-items:center;gap:.6em;color:var(--soft)}
+.cli .dot{flex:none}
+/* slide 18 investment */
+.inv{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:stretch}
+.gcard{padding:clamp(22px,3vw,44px);border-color:rgba(var(--gold-rgb),.55);display:grid;gap:18px;align-content:center;background:linear-gradient(160deg,#272319,#0c0b09 60%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 0 100px -30px rgba(var(--gold-rgb),.6),0 40px 70px -26px #000}
+.gcard .num{font-size:clamp(4rem,13vw,10rem)}
+.gcard .num small{font-size:.28em;letter-spacing:.14em;color:var(--gold);margin-left:.3em}
+.sum{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center}
+.sum .pl{font:900 2rem var(--f-display);color:var(--gold)}
+.sum .num{font-size:clamp(2.2rem,5vw,3.6rem)}
+.sum .mono{display:block;margin-top:.5em;color:var(--soft)}
+@media (max-width:520px){.sum{grid-template-columns:minmax(0,1fr)}.sum .pl{display:none}}
+.setup{padding:clamp(20px,2.6vw,34px);display:grid;gap:14px;align-content:center;border-color:rgba(var(--gold-rgb),.35)}
+.setup .num{font-size:clamp(3rem,8vw,6rem);position:relative;display:inline-block;color:#5b5648}
+.setup .num::after{content:"";position:absolute;left:-4%;right:-4%;top:48%;height:5px;background:var(--hot);transform:rotate(-6deg);box-shadow:0 0 14px var(--hot)}
+.waive{font:800 clamp(1.2rem,2.2vw,1.7rem)/1.05 var(--f-display);text-transform:uppercase;color:var(--gold)}
+.fine{font:400 .78rem/1.4 var(--f-body);color:var(--mute)}
+@media (max-width:860px){.inv{grid-template-columns:minmax(0,1fr)}}
+
+/* slide 19 constellation */
+.const{position:relative;width:100%;max-width:760px;aspect-ratio:1;margin-inline:auto;min-width:0}
+.const svg.orb{position:absolute;inset:0;width:100%;height:100%}
+.core2{position:absolute;left:50%;top:50%;width:24%;aspect-ratio:1;transform:translate(-50%,-50%);display:grid;place-items:center;text-align:center;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a3123,#0b0a08 70%);border:1px solid var(--gold);box-shadow:0 0 70px rgba(var(--gold-rgb),.45),inset 0 0 30px rgba(var(--gold-rgb),.2)}
+.core2 b{font:900 clamp(1rem,3.4vw,2rem)/1 var(--f-display);letter-spacing:.14em;color:var(--gold)}
+.core2 small{display:block;font:500 clamp(.45rem,1.2vw,.62rem) var(--f-mono);letter-spacing:.24em;color:var(--soft);margin-top:.4em}
+.nd{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);display:grid;justify-items:center;gap:6px;width:22%;text-align:center}
+.nd .ic{width:clamp(38px,7.4vw,62px);aspect-ratio:1;display:grid;place-items:center;background:linear-gradient(160deg,#343a44,#111317);border:1px solid rgba(255,255,255,.2);border-top-color:rgba(255,255,255,.4);transform:rotate(45deg);box-shadow:0 14px 22px -10px #000,0 0 22px -6px rgba(var(--hot-rgb),.6)}
+.nd .ic svg{width:48%;height:48%;transform:rotate(-45deg);fill:none;stroke:var(--hot-soft);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nd span{font:500 clamp(.5rem,1.3vw,.66rem)/1.2 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+@media (max-width:620px){
+  .const{aspect-ratio:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 6px}
+  .const svg.orb{display:none}
+  .core2{position:static;transform:none;grid-column:1/-1;width:96px;margin-inline:auto}
+  .nd{position:static;transform:none;width:auto}
+  .nd .ic{width:48px}.nd span{font-size:.58rem}
+}
+
+/* slide 20 scale */
+.stairs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,2vw,22px);align-items:end;height:clamp(220px,34vw,360px);padding-top:30px}
+.stp{position:relative;height:var(--hh);display:flex;align-items:flex-start;justify-content:center;background:linear-gradient(180deg,rgba(var(--hot-rgb),.95),rgba(var(--hot-rgb),.25) 90%);border:1px solid rgba(255,255,255,.25);border-bottom:0}
+.stp b{position:absolute;top:-1.15em;font:900 clamp(1.4rem,4vw,3rem)/1 var(--f-display);white-space:nowrap}
+.stp.open{background:linear-gradient(180deg,rgba(var(--hot-rgb),.0),rgba(var(--hot-rgb),.9) 12%,rgba(var(--hot-rgb),.25))}
+.gates{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.gates .chip::after{content:" ✓";color:#35e08a}
+.ax{font:500 .66rem var(--f-mono);letter-spacing:.2em;color:var(--mute)}
+
+/* slide 21 */
+.s21{text-align:center}
+.s21 .wrap{justify-items:center}
+.s21 .map3d{max-width:900px;margin-top:-4%}
+.marks{display:flex;align-items:center;justify-content:center;gap:clamp(14px,3vw,34px);flex-wrap:wrap}
+.wm{font:900 clamp(1.6rem,4vw,3rem)/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase}
+.wm.t{color:var(--hot);text-shadow:0 0 30px rgba(var(--hot-rgb),.5)}
+.wm.e{color:var(--gold);text-shadow:0 0 30px rgba(var(--gold-rgb),.4)}
+.wm small{font-size:.45em;letter-spacing:.2em;margin-left:.3em;color:var(--soft)}
+.x{font:500 1.2rem var(--f-mono);color:var(--mute)}
+.fin{font:900 clamp(2.4rem,8vw,6.4rem)/.9 var(--f-display);text-transform:uppercase;text-wrap:balance}
+.fin2{font:800 clamp(1.4rem,3.6vw,3rem)/1 var(--f-display);text-transform:uppercase;color:var(--soft)}
+.fin2 em{font-style:normal;color:#fff}
+.fe{font:400 clamp(.95rem,1.6vw,1.2rem)/1.4 var(--f-body);color:var(--mute);max-width:40ch}
+.fe b{color:var(--white);font-weight:600}
+.four{display:flex;flex-wrap:wrap;justify-content:center;gap:.3em .7em;font:800 clamp(1.2rem,3vw,2.2rem) var(--f-display);letter-spacing:.1em;color:var(--hot-soft)}
+
+.hidden-defs{position:absolute;width:0;height:0;overflow:hidden}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}:root{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<svg class="hidden-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="usP" d="M60 60 L120 52 L230 48 L330 50 L430 52 L520 56 L585 66 L625 92 L660 96 L700 88 L735 70 L785 62 L830 40 L870 28 L888 66 L860 112 L822 146 L800 176 L780 205 L752 232 L742 262 L735 290 L752 322 L786 346 L792 376 L772 410 L762 436 L786 466 L806 540 L800 596 L772 580 L758 522 L735 485 L700 478 L650 492 L600 504 L555 512 L520 540 L478 532 L440 556 L408 600 L372 612 L340 570 L300 524 L258 504 L200 502 L140 482 L100 440 L68 402 L50 330 L40 250 L42 160 L50 100 Z"/>
+    <path id="flP" d="M690 462 L745 466 L792 462 L808 540 L802 596 L772 580 L758 522 L735 485 L690 478 Z"/>
+    <linearGradient id="topg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#343a44"/><stop offset="1" stop-color="#14171b"/></linearGradient>
+    <pattern id="gridp" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/></pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a616c"/><stop offset=".45" stop-color="#262a31"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+    <clipPath id="usClip"><use href="#usP"/></clipPath>
+  </defs>
+</svg>
+
+<div id="bar"><i></i></div>
+<div class="brandtag">Tecnopano × Elevra AI</div>
+<nav id="nav" aria-label="Navegação dos slides">
+  <button id="prev" aria-label="Slide anterior"><svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button>
+  <span id="cnt">01 / 22</span>
+  <button id="next" aria-label="Próximo slide"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+</nav>
+
+<main>
+
+<!-- 1 COVER -->
+<section class="slide s1" aria-label="Capa">
+  <div class="wrap">
+    <p class="mono rv" style="--i:0;color:var(--soft)">Tecnopano × Elevra AI</p>
+    <h1 class="h tt rv" style="--i:1"><span class="chrome">TECNOPANO</span><br><em>RUMO AOS EUA.</em></h1>
+    <p class="sub rv" style="--i:2">Construindo o próximo motor de crescimento.</p>
+  </div>
+  <div class="map3d" data-map="cover"></div>
+</section>
+
+<!-- 2 LEGACY -->
+<section class="slide" aria-label="Legado">
+  <div class="wrap cols">
+    <div style="display:grid;gap:22px">
+      <p class="kicker rv">Legado</p>
+      <h2 class="h m rv" style="--i:1">Mais de 30 anos de <em>experiência industrial.</em></h2>
+      <p class="lead rv" style="--i:2">A Tecnopano já construiu o que a maioria das empresas ainda tenta criar.</p>
+      <div class="badge rv" style="--i:3"><b>2.000+</b><span>CLIENTES ATENDIDOS</span></div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div class="num tower chrome rv" style="--i:1">30+</div>
+      <div class="slabs rv" style="--i:2">
+        <div class="slab top" style="--w:56%">Experiência</div>
+        <div class="slab" style="--w:66%">Produtos</div>
+        <div class="slab" style="--w:76%">Clientes</div>
+        <div class="slab" style="--w:88%">Conhecimento de mercado</div>
+        <div class="slab" style="--w:100%">Credibilidade industrial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 OPPORTUNITY -->
+<section class="slide" aria-label="Oportunidade">
+  <div class="wrap cols">
+    <div style="display:grid;gap:22px">
+      <p class="kicker rv">Oportunidade</p>
+      <h2 class="h m rv" style="--i:1">O próximo mercado é <em>maior.</em></h2>
+      <p class="lead rv" style="--i:2"><b>O Brasil construiu a base.</b> Os EUA podem ser o próximo capítulo de crescimento.</p>
+      <div class="chips rv" style="--i:3"><span class="chip hot">Flórida</span><span class="chip">↓ Sudeste americano</span><span class="chip">↓ Nacional</span></div>
+      <div class="say rv" style="--i:4"><span>Não começamos em todo lugar.</span><span>Vencemos um mercado. Depois escalamos.</span></div>
+    </div>
+    <div class="map3d rv" style="--i:2" data-map="opp"></div>
+  </div>
+</section>
+
+<!-- 4 LEAKS -->
+<section class="slide" aria-label="O problema real">
+  <div class="wrap">
+    <p class="kicker rv">Vazamentos</p>
+    <h2 class="h rv" style="--i:1">Grandes empresas ainda perdem <em>receita.</em></h2>
+    <div class="pipe rv" style="--i:2" id="pipe"></div>
+    <div class="leaks rv" style="--i:3">
+      <div>Tráfego</div><div>Conversão</div><div>Follow-up</div><div>Reativação</div><div>Receita recorrente</div><div>Dados</div>
+    </div>
+    <p class="lead rv" style="--i:4;max-width:60ch">O crescimento não some em um só lugar.<br><b>Ele vaza ao longo de toda a jornada de receita.</b></p>
+  </div>
+</section>
+
+<!-- 5 WEBSITE -->
+<section class="slide" aria-label="Site não é motor de vendas">
+  <div class="wrap">
+    <p class="kicker rv">Vazamentos</p>
+    <h2 class="h m rv" style="--i:1">Um site não deve só informar.<br><em>Deve vender.</em></h2>
+    <div class="cols even">
+      <div class="panel pnl rv" style="--i:2"><h3 style="color:#6e747d">Hoje</h3>
+        <ol class="chain old"><li>Visitante</li><li>Produto</li><li>Formulário</li><li>Espera</li></ol></div>
+      <div class="panel pnl neoP rv" style="--i:3"><h3 style="color:var(--gold)">Elevra</h3>
+        <ol class="chain neo"><li>Visitante</li><li>IA</li><li>Qualificação</li><li>CRM</li><li>Vendas</li><li>Follow-up</li><li>Cliente</li></ol></div>
+    </div>
+    <p class="say rv" style="--i:4"><span>Transforme presença digital</span><span>em infraestrutura de vendas.</span></p>
+  </div>
+</section>
+
+<!-- 6 SPEED -->
+<section class="slide s6" aria-label="O problema da velocidade">
+  <div class="wrap cols even">
+    <div style="display:grid;gap:22px">
+      <p class="kicker rv">Vazamentos</p>
+      <h2 class="h rv" style="--i:1">Cada minuto <em>conta.</em></h2>
+      <p class="lead rv" style="--i:2">Um prospect nunca deveria esperar alguém ficar disponível.</p>
+      <div class="big247 rv" style="--i:3"><span class="num glowtxt">24/7</span><span class="tag">Recepção com IA</span></div>
+    </div>
+    <div style="display:grid;gap:22px">
+      <div class="dial rv" style="--i:1" id="dial"><div class="lead-lbl chrome">LEAD</div></div>
+      <div class="flow4 rv" style="--i:3"><div>Lead chega</div><div class="on">IA ativada</div><div class="on">Qualificação</div><div>Vendedor</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 FRONTDESK -->
+<section class="slide" aria-label="Recepção com IA">
+  <div class="wrap cols even">
+    <div style="display:grid;gap:22px">
+      <p class="kicker rv">Sistema</p>
+      <h2 class="h m rv" style="--i:1">Sua melhor recepção <em>nunca dorme.</em></h2>
+      <div class="say rv" style="--i:2"><span>A IA qualifica.</span><span style="color:var(--white)">O CRM organiza.</span><span>Vendas fecha.</span></div>
+    </div>
+    <div class="phone">
+      <div class="top"><i class="dot"></i>RECEPÇÃO COM IA · ONLINE</div>
+      <div class="msg ai pp" style="--i:0"><small>IA</small>Qual é o tipo do seu negócio?</div>
+      <div class="msg me pp" style="--i:1">Oficina mecânica automotiva.</div>
+      <div class="msg ai pp" style="--i:2"><small>IA</small>Quais produtos você usa hoje?</div>
+      <div class="msg me pp" style="--i:3">Panos industriais de limpeza e absorventes de óleo.</div>
+      <div class="msg ai pp" style="--i:4"><small>IA</small>Consumo mensal estimado?</div>
+      <div class="msg me pp" style="--i:5">Alto volume.</div>
+      <div class="qual pp" style="--i:6.4"><b>Lead qualificado</b>
+        <div class="chips"><span class="chip hot">Automotivo</span><span class="chip hot">Flórida</span><span class="chip hot">Alta intenção</span></div>
+        <div class="route">→ ENCAMINHADO PARA VENDAS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 CLIENTS -->
+<section class="slide s8" aria-label="2.000+ clientes">
+  <div class="wrap">
+    <p class="kicker rv">Sistema</p>
+    <h2 class="h m rv" style="--i:1">Sua próxima venda pode já <em>conhecer você.</em></h2>
+    <div class="cols">
+      <div style="display:grid;gap:12px">
+        <div class="num chrome rv" style="--i:2">2.000+</div>
+        <p class="tag rv" style="--i:3">Clientes atendidos</p>
+        <div class="chips rv" style="--i:4"><span class="chip hot">Reativação</span><span class="chip hot">Recompra</span><span class="chip hot">Cross-sell</span><span class="chip hot">Upsell</span></div>
+        <p class="lead rv" style="--i:5;max-width:44ch">Antes de conquistar todo mundo novo, <b>ative o valor que já existe dentro do negócio.</b></p>
+      </div>
+      <div class="panel rv" style="--i:2;padding:10px"><canvas id="dots" aria-label="Pontos representando clientes sendo reativados" role="img"></canvas><p class="mono" style="padding:4px 6px 2px">Ilustrativo · apagado = inativo, vermelho = ativo</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 RECURRING -->
+<section class="slide" aria-label="Receita recorrente">
+  <div class="wrap">
+    <p class="kicker rv">Sistema</p>
+    <h2 class="h m rv" style="--i:1">Pare de vender o mesmo produto <em>do zero.</em></h2>
+    <div class="loop rv" style="--i:2" id="loop"></div>
+    <div class="cyc rv" style="--i:3"><div>Compra</div><div>Consumo</div><div>Recompra</div><div>Entrega</div></div>
+    <div class="cols even" style="align-items:end">
+      <p class="lead" style="max-width:44ch">Produtos consumíveis criam a oportunidade de <b>ciclos de compra previsíveis.</b></p>
+      <div class="chips" style="justify-content:flex-end"><span class="chip hot">Mensal</span><span class="chip hot">Quinzenal</span><span class="chip hot">Trimestral</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 ENGINE -->
+<section class="slide" aria-label="O Motor de Receita Elevra">
+  <div class="wrap">
+    <p class="kicker rv">Sistema</p>
+    <h2 class="h rv" style="--i:1">O Motor de Receita <em>Elevra</em></h2>
+    <div class="engine rv" style="--i:2">
+      <div class="inputs"><span class="chip">Google</span><span class="chip">SEO</span><span class="chip">Outbound</span><span class="chip">LinkedIn</span><span class="chip">Base de clientes</span><span class="chip">Indicações</span></div>
+      <div class="panel core"><i class="rail"></i>
+        <div class="st">Recepção com IA</div><div class="st">Qualificação</div><div class="st">CRM</div><div class="st">Automação</div><div class="st">Vendas</div><div class="st">Recompra</div><div class="st">Cross-sell</div><div class="st">Dados</div></div>
+      <div class="outp"><span class="mono">Saída</span><span class="num glowtxt">RECEITA</span></div>
+    </div>
+    <p class="say rv" style="--i:3"><span>Não é marketing.</span><span>Uma infraestrutura de receita conectada.</span></p>
+  </div>
+</section>
+
+<!-- 11 INBOUND OUTBOUND -->
+<section class="slide" aria-label="Inbound e outbound">
+  <div class="wrap">
+    <p class="kicker rv">Sistema</p>
+    <div class="split rv" style="--i:1">
+      <div class="half"><h2 class="h">Inbound</h2>
+        <div class="chips"><span class="chip">Busca no Google</span><span class="chip">SEO</span><span class="chip">Landing Pages</span><span class="chip">Remarketing</span></div></div>
+      <div class="half"><h2 class="h">Outbound</h2>
+        <div class="chips"><span class="chip">Contas-alvo</span><span class="chip">Decisores</span><span class="chip">E-mail</span><span class="chip">LinkedIn</span><span class="chip">Prospecção comercial</span></div></div>
+      <div class="mid">ELEVRA AI</div>
+    </div>
+    <div class="say rv" style="--i:2"><span>Capture a demanda existente.</span><span>Crie nova demanda.</span></div>
+  </div>
+</section>
+
+<!-- 12 BEACHHEAD -->
+<section class="slide" aria-label="Cabeça de ponte na Flórida">
+  <div class="wrap">
+    <p class="kicker rv">EUA</p>
+    <h2 class="h m rv" style="--i:1">Não ataque o país inteiro.<br><em>Domine uma cabeça de ponte.</em></h2>
+    <div class="map3d rv" style="--i:2;max-width:980px;justify-self:center" data-map="beach"></div>
+    <div class="chips rv" style="--i:3;justify-content:center"><span class="chip hot">Automotivo</span><span class="chip hot">Concessionárias</span><span class="chip hot">Frotas</span><span class="chip hot">Indústria</span><span class="chip hot">Manutenção industrial</span></div>
+    <div class="four rv" style="--i:4;justify-content:center"><span>VALIDAR.</span><span>VENCER.</span><span>REPLICAR.</span><span>ESCALAR.</span></div>
+  </div>
+</section>
+
+<!-- 13 EXPANSION -->
+<section class="slide" aria-label="O modelo de expansão">
+  <div class="wrap cols">
+    <div style="display:grid;gap:22px">
+      <p class="kicker rv">EUA</p>
+      <h2 class="h m rv" style="--i:1">A Flórida é só o <em>começo.</em></h2>
+      <ol class="chain neo rv" style="--i:2">
+        <li><span style="color:var(--hot-soft)">Fase 01</span> · Flórida</li>
+        <li><span style="color:var(--hot-soft)">Fase 02</span> · Sudeste americano</li>
+        <li><span style="color:var(--hot-soft)">Fase 03</span> · Principais mercados dos EUA</li>
+        <li><span style="color:var(--hot-soft)">Fase 04</span> · Nacional</li>
+      </ol>
+      <p class="mono rv" style="--i:3;color:var(--soft)">Nicho → Região → Domínio → Expansão</p>
+    </div>
+    <div class="map3d rv" style="--i:2" data-map="expand"></div>
+  </div>
+</section>
+
+<!-- 14 ROAD TO 2X -->
+<section class="slide" aria-label="O caminho para 2X">
+  <div class="wrap">
+    <p class="kicker rv">Escala</p>
+    <h2 class="h rv" style="--i:1">O caminho para <em>2X</em></h2>
+    <div class="eq rv" style="--i:2">
+      <div class="panel mult"><small>MULTIPLICADOR</small>Mais oportunidades</div>
+      <div class="panel mult"><small>MULTIPLICADOR</small>Maior conversão</div>
+      <div class="panel mult"><small>MULTIPLICADOR</small>Maior valor por cliente</div>
+      <div class="panel mult"><small>MULTIPLICADOR</small>Mais frequência</div>
+    </div>
+    <div class="gr rv" style="--i:3"><span class="eqs">=</span><span class="num chrome" style="font-size:clamp(3rem,10vw,7rem)">CRESCIMENTO</span></div>
+    <div class="say rv" style="--i:4"><span>Não dependemos de um milagre.</span><span>Melhoramos a equação inteira da receita.</span></div>
+    <p class="fine" style="max-width:60ch">Objetivo de crescimento. Construindo a infraestrutura necessária para escalar.</p>
+  </div>
+</section>
+
+<!-- 15 90 DAYS -->
+<section class="slide" aria-label="90 dias">
+  <div class="wrap">
+    <p class="kicker rv">Escala</p>
+    <h2 class="h m rv" style="--i:1">90 dias para construir <em>a máquina.</em></h2>
+    <div class="blocks">
+      <div class="panel blk rv" style="--i:2"><svg class="gear a" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <span class="d">DIAS 01–30</span><h3>Fundação</h3>
+        <ul><li>Posicionamento EUA</li><li>Rastreamento</li><li>CRM</li><li>Recepção com IA</li><li>Landing Pages</li><li>Pipeline de vendas</li><li>Infraestrutura de campanhas</li></ul><div class="prog"><i style="width:33%"></i></div></div>
+      <div class="panel blk rv" style="--i:3"><svg class="gear b" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <span class="d">DIAS 31–60</span><h3>Aquisição</h3>
+        <ul><li>Google</li><li>Outbound</li><li>SEO</li><li>Remarketing</li><li>Geração de leads</li><li>Automação de vendas</li></ul><div class="prog"><i style="width:66%"></i></div></div>
+      <div class="panel blk rv" style="--i:4"><svg class="gear c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <span class="d">DIAS 61–90</span><h3>Otimização</h3>
+        <ul><li>CAC</li><li>Conversão</li><li>Pipeline</li><li>Atribuição de receita</li><li>Segmentos vencedores</li><li>Decisões de escala</li></ul><div class="prog"><i style="width:100%"></i></div></div>
+    </div>
+    <p class="mono rv" style="--i:5">Construir → Ligar → Acelerar</p>
+  </div>
+</section>
+
+<!-- 16 MEASURE -->
+<section class="slide" aria-label="O que medimos">
+  <div class="wrap">
+    <p class="kicker rv">Escala</p>
+    <h2 class="h rv" style="--i:1">Sem achismo.<br><em>Só dados.</em></h2>
+    <div class="panel dash rv" style="--i:2" id="dash"></div>
+    <div class="say rv" style="--i:3"><span>Cada dólar. Cada lead. Cada oportunidade.</span><span>Medido.</span></div>
+    <p class="fine">Layout ilustrativo. Todas as métricas acima são acompanhadas desde o primeiro dia.</p>
+  </div>
+</section>
+
+<!-- 17 VS -->
+<section class="slide" aria-label="Agência tradicional vs Elevra">
+  <div class="wrap">
+    <p class="kicker rv">Escala</p>
+    <h2 class="h m rv" style="--i:1">Isto não é mais um <em>contrato de marketing.</em></h2>
+    <div class="vs rv" style="--i:2">
+      <div class="panel pnl old" style="filter:none"><h3 style="color:#6e747d">Agência tradicional</h3>
+        <ol class="chain old"><li>Tráfego</li><li>Campanhas</li><li>Leads</li></ol></div>
+      <div class="panel pnl neoP"><h3 style="color:var(--gold)">Elevra</h3>
+        <div class="chips"><span class="chip hot">Estratégia EUA</span><span class="chip hot">Geração de demanda</span><span class="chip hot">Recepção com IA</span><span class="chip hot">CRM</span><span class="chip hot">Automação</span><span class="chip hot">Outbound</span><span class="chip hot">Pipeline de vendas</span><span class="chip hot">Reativação</span><span class="chip hot">Analytics</span><span class="chip hot">Escala</span></div></div>
+    </div>
+    <div class="verdict rv" style="--i:3"><s>Marketing</s><span class="vsw">VS.</span><span class="glowtxt">Infraestrutura de receita</span></div>
+  </div>
+</section>
+
+<!-- CLIENTES ELEVRA -->
+<section class="slide" aria-label="Clientes da Elevra">
+  <div class="wrap">
+    <p class="kicker rv" style="color:var(--gold)">Credibilidade</p>
+    <h2 class="h m rv" style="--i:1">Quem já cresce com a <span class="g">Elevra.</span></h2>
+    <div class="cli rv" style="--i:2">
+      <div class="panel"><b>Autoforce</b><span class="mono"><i class="dot"></i>Cliente Elevra</span></div>
+      <div class="panel"><b>Soares Remodeling</b><span class="mono"><i class="dot"></i>Cliente Elevra</span></div>
+      <div class="panel"><b>Heart Mortgage</b><span class="mono"><i class="dot"></i>Cliente Elevra</span></div>
+      <div class="panel"><b>Semper Fidelis</b><span class="mono"><i class="dot"></i>Cliente Elevra</span></div>
+      <div class="panel"><b>Steel Corp</b><span class="mono"><i class="dot"></i>Cliente Elevra</span></div>
+    </div>
+    <p class="lead rv" style="--i:3;max-width:48ch">Empresas que já confiam na <b>Elevra</b> para construir sua infraestrutura de crescimento.</p>
+  </div>
+</section>
+
+<!-- 18 INVESTMENT -->
+<section class="slide" aria-label="Investimento">
+  <div class="wrap">
+    <p class="kicker rv" style="color:var(--gold)">Investimento</p>
+    <h2 class="h m rv" style="--i:1">Parceria de crescimento <span class="g">nos EUA · 90 dias</span></h2>
+    <div class="inv">
+      <div class="panel gcard rv" style="--i:2">
+        <span class="mono" style="color:var(--gold)">Investimento total em crescimento</span>
+        <div class="num chrome">US$7.500<small>/ MÊS</small></div>
+        <div class="sum">
+          <div><span class="num">US$4.000</span><span class="mono">Motor de Crescimento Elevra</span></div>
+          <span class="pl">+</span>
+          <div><span class="num">US$3.500</span><span class="mono">Investimento em mídia recomendado</span></div>
+        </div>
+        <p class="fine">A mídia paga também pode ser faturada diretamente para a Tecnopano.</p>
+      </div>
+      <div class="panel setup rv" style="--i:3">
+        <span class="mono" style="color:var(--gold)">Infraestrutura de crescimento nos EUA</span>
+        <div><span class="num">US$7.500</span></div>
+        <span class="mono">Implantação</span>
+        <p class="waive">Incluso<br>Isento na parceria de 90 dias</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 INCLUDED -->
+<section class="slide" aria-label="O que está incluso">
+  <div class="wrap">
+    <p class="kicker rv">Escala</p>
+    <h2 class="h m rv" style="--i:1;text-align:center;justify-self:center">Um parceiro.<br><em>Um sistema de crescimento.</em></h2>
+    <div class="const rv" style="--i:2" id="const"></div>
+  </div>
+</section>
+
+<!-- 20 SCALE DECISION -->
+<section class="slide" aria-label="A decisão de escala">
+  <div class="wrap">
+    <p class="kicker rv">Escala</p>
+    <h2 class="h m rv" style="--i:1">Não escalamos porque recebemos cliques.<br><em>Escalamos quando a economia fecha.</em></h2>
+    <div class="rv" style="--i:2">
+      <p class="ax" style="margin-bottom:6px">INVESTIMENTO EM MÍDIA / MÊS</p>
+      <div class="stairs">
+        <div class="stp" style="--hh:17.5%"><b>$3,5K</b></div>
+        <div class="stp" style="--hh:25%"><b>$5K</b></div>
+        <div class="stp" style="--hh:50%"><b>$10K</b></div>
+        <div class="stp open" style="--hh:100%"><b>$20K+</b></div>
+      </div>
+    </div>
+    <div class="gates rv" style="--i:3"><span class="mono" style="margin-right:6px">Cada etapa passa por</span><span class="chip">CAC</span><span class="chip">Margem</span><span class="chip">Pipeline</span><span class="chip">Receita</span></div>
+    <div class="say rv" style="--i:4"><span>Prove o modelo.</span><span>Depois acelere.</span></div>
+  </div>
+</section>
+
+<!-- 21 FINAL -->
+<section class="slide s21" aria-label="Final">
+  <div class="wrap">
+    <div class="map3d rv" data-map="final"></div>
+    <div class="marks rv" style="--i:1"><span class="wm t">Tecnopano</span><span class="x">×</span><span class="wm e">Elevra<small>IA</small></span></div>
+    <h2 class="fin rv" style="--i:2">O Brasil<br>construiu o legado.</h2>
+    <p class="fin2 rv" style="--i:3">Agora vamos construir <em>o motor de crescimento nos EUA.</em></p>
+    <p class="fe rv" style="--i:4">A Tecnopano não precisa de mais uma agência.<br><b>A Tecnopano precisa de um motor de crescimento para os Estados Unidos.</b> A Elevra constrói.</p>
+    <div class="four rv" style="--i:5"><span>CONSTRUIR.</span><span>VALIDAR.</span><span>DOMINAR.</span><span>ESCALAR.</span></div>
+    <p class="mono rv" style="--i:6">Tecnopano × Elevra AI</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var NS='http://www.w3.org/2000/svg';
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- maps ---------- */
+  var FL=[[775,520],[790,560],[768,500],[752,478],[795,500],[782,585],[765,540],[800,530]];
+  function mapSVG(kind){
+    var s='<svg viewBox="0 0 1000 760" aria-hidden="true">';
+    for(var i=12;i>=1;i--){var c=Math.max(8,34-i*2);s+='<use href="#usP" transform="translate(0,'+(i*2.4)+')" fill="rgb('+c+','+(c+2)+','+(c+6)+')"/>';}
+    s+='<use href="#usP" fill="url(#topg)" stroke="rgba(255,255,255,.28)" stroke-width="1.6"/>';
+    s+='<rect x="0" y="0" width="1000" height="640" fill="url(#gridp)" clip-path="url(#usClip)"/>';
+    var fo=(kind==='cover'||kind==='opp'||kind==='beach'||kind==='final')?1:0.9;
+    if(kind==='expand'){
+      s+='<g clip-path="url(#usClip)">';
+      var R=[900,480,260,90],O=[.10,.16,.26,.55];
+      for(var r=0;r<4;r++){s+='<circle cx="778" cy="520" r="'+R[r]+'" fill="rgba(226,35,26,'+O[r]+')" stroke="rgba(255,90,77,.8)" stroke-width="2"/>';}
+      s+='</g>';
+    }
+    if(kind==='opp'){
+      s+='<g clip-path="url(#usClip)">';
+      for(var k=0;k<3;k++){s+='<circle class="ring ringA" cx="778" cy="520" r="520" fill="none" stroke="#ff5a4d" stroke-width="3" style="animation-delay:'+(k*1.66)+'s"/>';}
+      s+='</g>';
+    }
+    s+='<g clip-path="url(#usClip)"><use href="#flP" fill="rgba(226,35,26,'+fo+')" filter="url(#glow)"/></g>';
+    s+='<use href="#flP" fill="rgba(255,120,100,.55)" stroke="#ff8a7c" stroke-width="1.4"/>';
+    for(var j=0;j<FL.length;j++){s+='<circle class="twk" cx="'+FL[j][0]+'" cy="'+FL[j][1]+'" r="3.4" fill="#fff" style="animation-delay:'+(j*.3)+'s"/>';}
+    if(kind==='cover'||kind==='final'){
+      s+='<path d="M846 704 L890 686 L944 702 L956 736 L926 756 L880 750 L852 730 Z" fill="#23272d" stroke="rgba(255,255,255,.3)" stroke-width="1.4"/>';
+      s+='<path d="M900 716 C 990 640, 930 560, 800 548" fill="none" stroke="#d4a84b" stroke-width="3" filter="url(#glow)" class="flowline"/>';
+      s+='<circle cx="900" cy="716" r="6" fill="#d4a84b"/>';
+    }
+    return s+'</svg>';
+  }
+  document.querySelectorAll('[data-map]').forEach(function(el){el.innerHTML=mapSVG(el.getAttribute('data-map'));});
+
+  /* ---------- pipeline (slide 4) ---------- */
+  (function(){
+    var xs=[110,285,460,635,805,935],s='<svg viewBox="0 0 1000 230">';
+    s+='<rect x="0" y="62" width="1000" height="52" fill="url(#tube)"/><rect x="0" y="62" width="1000" height="3" fill="rgba(255,255,255,.35)"/>';
+    for(var i=0;i<xs.length;i++){
+      s+='<rect x="'+(xs[i]-22)+'" y="54" width="44" height="68" fill="#20242b" stroke="rgba(255,255,255,.25)"/>';
+      s+='<rect x="'+(xs[i]-9)+'" y="114" width="18" height="10" fill="#050607"/>';
+      for(var d=0;d<3;d++){s+='<circle class="drip" cx="'+xs[i]+'" cy="130" r="4.5" fill="#e2231a" style="animation-delay:'+(d*.55+i*.2)+'s"/>';}
+    }
+    for(var p=0;p<14;p++){s+='<circle r="5" fill="#d4a84b" filter="url(#glow)"><animateMotion dur="7s" begin="-'+(p*.5)+'s" repeatCount="indefinite" path="M-10 88 H1010"/></circle>';}
+    $('#pipe').innerHTML=s+'</svg>';
+  })();
+
+  /* ---------- stopwatch (slide 6) ---------- */
+  (function(){
+    var s='<svg viewBox="0 0 400 400"><defs><radialGradient id="face" cx=".4" cy=".3"><stop offset="0" stop-color="#2a2f37"/><stop offset="1" stop-color="#050607"/></radialGradient></defs>';
+    s+='<rect x="180" y="6" width="40" height="26" fill="#3a4048"/><circle cx="200" cy="205" r="186" fill="#161a1f" stroke="rgba(255,255,255,.35)" stroke-width="3"/><circle cx="200" cy="205" r="168" fill="url(#face)" stroke="rgba(var(--hot-rgb),.0)"/>';
+    s+='<g transform="translate(0,5)">';
+    for(var i=0;i<60;i++){var a=i*6*Math.PI/180,l=i%5?8:18,x1=200+Math.sin(a)*160,y1=200-Math.cos(a)*160,x2=200+Math.sin(a)*(160-l),y2=200-Math.cos(a)*(160-l);
+      s+='<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="'+(i%5?'#6e747d':'#fff')+'" stroke-width="'+(i%5?1.5:3)+'"/>';}
+    s+='<path d="M200 40 A160 160 0 0 1 340 120" fill="none" stroke="#e2231a" stroke-width="8" filter="url(#glow)"/>';
+    s+='<g class="hand"><line x1="200" y1="214" x2="200" y2="52" stroke="#e2231a" stroke-width="4" filter="url(#glow)"/></g><circle cx="200" cy="200" r="9" fill="#fff"/></g></svg>';
+    $('#dial').insertAdjacentHTML('afterbegin',s);
+  })();
+
+  /* ---------- loop (slide 9) ---------- */
+  (function(){
+    var P='M500 150 C 600 30, 880 30, 880 150 C 880 270, 600 270, 500 150 C 400 30, 120 30, 120 150 C 120 270, 400 270, 500 150 Z';
+    var s='<svg viewBox="0 0 1000 300"><path d="'+P+'" fill="none" stroke="#1d2026" stroke-width="30"/><path d="'+P+'" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2" stroke-dasharray="3 9"/>';
+    s+='<path id="lp" d="'+P+'" fill="none" stroke="rgba(226,35,26,.55)" stroke-width="3" filter="url(#glow)"/>';
+    for(var i=0;i<6;i++){
+      s+='<g><rect x="-14" y="-12" width="28" height="24" fill="#c9ced6" stroke="#fff" stroke-width="1"/><path d="M-14 -12 L-6 -20 L22 -20 L14 -12 Z" fill="#8c929c"/><rect x="-14" y="-4" width="28" height="6" fill="#e2231a"/><animateMotion dur="12s" begin="-'+(i*2)+'s" repeatCount="indefinite" rotate="0"><mpath href="#lp"/></animateMotion></g>';
+    }
+    s+='<rect x="400" y="116" width="200" height="68" fill="#06070a" stroke="rgba(255,255,255,.25)"/><text x="500" y="146" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="800" font-size="27" letter-spacing="3" fill="#fff">RECEITA</text><text x="500" y="174" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="800" font-size="27" letter-spacing="3" fill="#e2231a">RECORRENTE</text>';
+    $('#loop').innerHTML=s+'</svg>';
+  })();
+
+  /* ---------- dashboard (slide 16) ---------- */
+  (function(){
+    var L=['Leads','Leads qualificados','CPL','Custo por SQL','Propostas','Taxa de fechamento','CAC','Receita','Recompra','LTV'],h='';
+    for(var i=0;i<L.length;i++){
+      var pts=[],v=34;for(var k=0;k<12;k++){v+=(((i*7+k*13)%9)-3.2)*1.4-0.9;v=Math.max(6,Math.min(40,v));pts.push((k*10)+','+(44-v).toFixed(1));}
+      var line=pts.join(' ');
+      h+='<div class="kpi"><div class="l">'+L[i]+'</div><svg viewBox="0 0 110 44" preserveAspectRatio="none"><polygon points="0,44 '+line+' 110,44" fill="rgba(226,35,26,.18)"/><polyline points="'+line+'" fill="none" stroke="#e2231a" stroke-width="1.8"/><circle cx="110" cy="'+pts[11].split(',')[1]+'" r="2.4" fill="#fff"/></svg><div class="st">● MONITORADO</div></div>';
+    }
+    $('#dash').innerHTML=h;
+  })();
+
+  /* ---------- constellation (slide 19) ---------- */
+  (function(){
+    var IC={
+      'Estratégia de mercado EUA':'M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18',
+      'Landing Pages':'M3 5h18v14H3zM3 9h18M7 13h6',
+      'Google Ads':'M11 4a7 7 0 100 14 7 7 0 000-14zM16 16l5 5',
+      'Recepção com IA':'M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2zM19 16v4M17 18h4',
+      'CRM':'M5 6c0-1.7 3.1-3 7-3s7 1.3 7 3-3.1 3-7 3-7-1.3-7-3zM5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6',
+      'Automação de vendas':'M12 9a3 3 0 100 6 3 3 0 000-6zM12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2',
+      'Outbound B2B':'M3 11l18-8-8 18-2-8z',
+      'Remarketing':'M4 12a8 8 0 0113-6l3 2M20 4v4h-4M20 12a8 8 0 01-13 6l-3-2M4 20v-4h4',
+      'Analytics':'M4 20V10M10 20V4M16 20v-8M22 20H2',
+      'Dashboard':'M4 18a8 8 0 1116 0M12 18l4-6',
+      'Pipeline de vendas':'M3 4h18l-7 8v7l-4 2v-9z',
+      'Otimização':'M3 17l6-6 4 4 8-9M15 6h6v6'
+    };
+    var names=Object.keys(IC),n=names.length,h='<svg class="orb" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(212,168,75,.35)" stroke-dasharray="1 2"/><circle cx="50" cy="50" r="26" fill="none" stroke="rgba(255,255,255,.1)"/>';
+    var pos=[];
+    for(var i=0;i<n;i++){var a=(i/n)*Math.PI*2-Math.PI/2,x=50+Math.cos(a)*40,y=50+Math.sin(a)*40;pos.push([x,y]);h+='<line x1="50" y1="50" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="rgba(226,35,26,.4)" stroke-width=".3"/>';}
+    h+='</svg><div class="core2"><div><b>ELEVRA</b><small>IA</small></div></div>';
+    for(var j=0;j<n;j++){h+='<div class="nd" style="--x:'+pos[j][0].toFixed(1)+'%;--y:'+pos[j][1].toFixed(1)+'%"><div class="ic"><svg viewBox="0 0 24 24"><path d="'+IC[names[j]]+'"/></svg></div><span>'+names[j]+'</span></div>';}
+    $('#const').innerHTML=h;
+  })();
+
+  /* ---------- clients dots (slide 8) ---------- */
+  var dots={cv:$('#dots'),on:false,list:[],ratio:.3,raf:0};
+  (function(){
+    var cv=dots.cv,ctx=cv.getContext('2d');
+    function build(){
+      var dpr=Math.min(2,window.devicePixelRatio||1),w=cv.clientWidth,h=cv.clientHeight;
+      cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+      var cols=Math.max(18,Math.round(w/16)),rows=Math.max(12,Math.round(h/16)),old=dots.list.length?dots.list:null;dots.list=[];
+      var seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+      for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+        dots.list.push({x:(c+.5)/cols*w+(rnd()-.5)*5,y:(r+.5)/rows*h+(rnd()-.5)*5,a:rnd()<dots.ratio,t:-9999});
+      }
+      draw(performance.now());
+    }
+    function draw(now){
+      var w=cv.clientWidth,h=cv.clientHeight;ctx.clearRect(0,0,w,h);
+      for(var i=0;i<dots.list.length;i++){
+        var d=dots.list[i];
+        if(d.a){var k=Math.max(0,1-(now-d.t)/900);ctx.fillStyle='rgba(226,35,26,1)';ctx.shadowColor='rgba(255,90,77,.95)';ctx.shadowBlur=7+k*16;ctx.beginPath();ctx.arc(d.x,d.y,2.5+k*3,0,6.283);ctx.fill();}
+        else{ctx.shadowBlur=0;ctx.fillStyle='rgba(255,255,255,.14)';ctx.beginPath();ctx.arc(d.x,d.y,2.1,0,6.283);ctx.fill();}
+      }
+      ctx.shadowBlur=0;
+    }
+    function tick(now){
+      if(!dots.on)return;
+      var inactive=dots.list.filter(function(d){return !d.a});
+      var n=Math.max(1,Math.round(dots.list.length*.012));
+      if(inactive.length>dots.list.length*.18){for(var i=0;i<n&&inactive.length;i++){var d=inactive.splice(Math.floor(Math.random()*inactive.length),1)[0];d.a=true;d.t=now;}}
+      draw(now);dots.raf=requestAnimationFrame(tick);
+    }
+    dots.start=function(){if(reduce||dots.on)return;dots.on=true;dots.list.forEach(function(d){d.a=Math.random()<.3});dots.raf=requestAnimationFrame(tick)};
+    dots.stop=function(){dots.on=false;cancelAnimationFrame(dots.raf)};
+    build();
+    var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(build,150)});
+  })();
+
+  /* ---------- navigation ---------- */
+  var slides=[].slice.call(document.querySelectorAll('.slide')),idx=0,cnt=$('#cnt'),bar=$('#bar i');
+  function pad(n){return (n<10?'0':'')+n}
+  function setIdx(i){idx=i;cnt.textContent=pad(i+1)+' / '+pad(slides.length);bar.style.width=((i+1)/slides.length*100)+'%';}
+  setIdx(0);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      var i=slides.indexOf(e.target);
+      if(e.isIntersecting){e.target.classList.add('live');setIdx(i);if(e.target.classList.contains('s8'))dots.start();}
+      else{e.target.classList.remove('live');if(e.target.classList.contains('s8'))dots.stop();}
+    })},{threshold:.5});
+    slides.forEach(function(s){io.observe(s)});
+  }
+  function go(i){i=Math.max(0,Math.min(slides.length-1,i));slides[i].scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});}
+  $('#prev').addEventListener('click',function(){go(idx-1)});
+  $('#next').addEventListener('click',function(){go(idx+1)});
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowDown'||k==='PageDown'||k==='ArrowRight'||k===' '){e.preventDefault();go(idx+1)}
+    else if(k==='ArrowUp'||k==='PageUp'||k==='ArrowLeft'){e.preventDefault();go(idx-1)}
+    else if(k==='Home'){e.preventDefault();go(0)}
+    else if(k==='End'){e.preventDefault();go(slides.length-1)}
+  });
+})();
+</script>
+
+</body>
+</html>
